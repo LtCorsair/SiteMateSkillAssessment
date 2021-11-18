@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteMate Coding Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="box">
+
+        <button class="button" onclick="popUp()">Click me!</button>
+        <span id="afterText"></span>
+        
+        <div id="popup">
+            <h1 id="popupText">Are you sure you want to continue?</h1>
+            <div>
+                <button class="button" onclick="closePopup(this.innerHTML)">Yes</button>
+                <button class="button" onclick="closePopup(this.innerHTML)">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+    // When the user clicks on the button, open the popup
+    const popUp = (e) => {
+        document.getElementById("popup").style.visibility = "visible";
+    }
+
+    // When the user clicks on okay or cancel, close the popup
+    const closePopup = (e) => {
+        document.getElementById("popup").style.visibility = "hidden";
+        document.getElementById("afterText").innerHTML = `You clicked ${e}!`;
+    }
+    </script>
+    
+    </body>
+</html>
